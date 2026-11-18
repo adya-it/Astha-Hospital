@@ -291,6 +291,11 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 .rcard .av { grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-weight: 700; }
 .rcard figcaption b { font-weight: 600; color: var(--ink); }
 .rcard figcaption small { color: var(--muted); }
+.contact h2.visit, h2.visit { font-size: clamp(2.4rem, 5vw, 3.6rem); margin-bottom: 8px; }
+.mapcard { margin-top: 24px; border-radius: 20px; overflow: hidden; box-shadow: 0 14px 34px rgba(15,33,66,.16); background: #e5ecf7; line-height: 0; }
+.mapcard iframe { width: 100%; height: 420px; border: 0; display: block; }
+.mapbtn { margin-top: 20px; }
+@media (max-width: 640px) { .mapcard iframe { height: 320px; } }
 .revlinks { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .contact div { background: var(--card); border-radius: 18px; padding: 22px 24px; box-shadow: 0 6px 22px rgba(15,33,66,.07); line-height: 1.5; }
@@ -670,15 +675,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
   <section id="contact">
     <div class="wrap">
-      <span class="eyebrow">Visit us</span>
-      <h2>Come and see us.</h2>
-      <p class="lede">Call to book a consultation, or find us on the map.</p>
+      <h2 class="visit">Visit us</h2>
+      <div class="mapcard">
+        <iframe title="Astha Hospital &amp; Heart Center on Google Maps" src="https://www.google.com/maps?q=Astha+Hospital+%26+Heart+Center%2C+Allahabad+Faizabad+Rd%2C+Vallipur%2C+Sultanpur&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
       <div class="contact">
         <div><b>Address</b>Allahabad&ndash;Faizabad Road (near Panchopeeran), Vallipur, Sultanpur, Uttar Pradesh 228001</div>
         <div><b>Appointments</b><a href="tel:+919415046034">94150 46034</a><br><a class="wa-btn" href="https://wa.me/919415046034?text=Hello%20Astha%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment."><svg aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a></div>
         <div><b>Emergency</b><a href="tel:+915362240017">05362-240017</a></div>
-        <div class="wide"><b>Map</b><a class="btn solid sm" href="https://maps.app.goo.gl/8KdZwehxKVHhp4iZ9">Open in Google Maps</a></div>
       </div>
+      <p class="mapbtn"><a class="btn solid sm" href="https://maps.app.goo.gl/8KdZwehxKVHhp4iZ9">Open in Google Maps &middot; Get directions</a></p>
     </div>
   </section>
 </main>
