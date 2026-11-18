@@ -158,6 +158,18 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 .darrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(15,33,66,.1); }
 .darrows button:hover { background: var(--heart); border-color: var(--heart); color: #fff; }
 @media (max-width: 900px) { .dgrid .dcard { flex: 0 0 100%; } .dgrid { gap: 20px; } .dpic { width: 210px; height: 210px; top: -105px; } .dbody { padding-top: 120px; } .dgrid { padding-top: 115px; } }
+
+.rev-sec { padding-top: 48px; padding-bottom: 40px; }
+.rev-sec .rtrack { padding: 22px 4px 18px; margin-bottom: -12px; }
+.rev-sec .rcard { min-height: 0; }
+.rev-sec .rph { height: 110px; object-position: center 40%; }
+.rev-sec .rin { padding: 16px 18px; }
+.rev-sec .rcard blockquote { margin: 6px 0 12px; font-size: 1rem; line-height: 1.45; }
+.rev-sec .rcard .stars { font-size: 1.05rem; }
+.rev-sec .rcard .av { width: 36px; height: 36px; object-fit: cover; }
+.rev-sec .rcard figcaption { grid-template-columns: 36px 1fr; }
+.rev-sec .dctrl { margin-top: 10px; }
+.rev-sec h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 @media (prefers-reduced-motion: reduce) { .dgrid { scroll-behavior: auto; } }
 .controls { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 5; margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .dots { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -641,15 +653,15 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="wrap">
       <div class="rslider" id="rslider">
         <div class="rtrack" id="rtrack" tabindex="0" aria-label="Patient reviews">
-        <figure class="rcard"><img class="rph" src="img/review-dialysis.jpg" alt="Photo shared with the review: dialysis unit" loading="lazy"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Nephro &amp; Cardiac oriented Best hospital in sultanpur</blockquote><figcaption><span class="av" aria-hidden="true">A</span><b>Ankit Yadav</b><small>Google review</small></figcaption></div></figure>
-        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Best hospital in my city<br>All staff support</blockquote><figcaption><span class="av" aria-hidden="true">S</span><b>Sudeep Sharma</b><small>Google review</small></figcaption></div></figure>
+        <figure class="rcard"><img class="rph" src="img/review-dialysis.jpg" alt="Photo shared with the review: dialysis unit" loading="lazy"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Nephro &amp; Cardiac oriented Best hospital in sultanpur</blockquote><figcaption><img class="av" src="img/av-ankit.jpg" alt="" loading="lazy"><b>Ankit Yadav</b><small>Google review</small></figcaption></div></figure>
+        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Best hospital in my city<br>All staff support</blockquote><figcaption><img class="av" src="img/av-sudeep.jpg" alt="" loading="lazy"><b>Sudeep Sharma</b><small>Google review</small></figcaption></div></figure>
         <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Dr. Kc tripathi sir thanks to you for save my life</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Ramchandra Ray</b><small>Google review</small></figcaption></div></figure>
         <figure class="rcard"><img class="rph" src="img/review-icu.jpg" alt="Photo shared with the review: ICU" loading="lazy"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Very best hart hospital</blockquote><figcaption><span class="av" aria-hidden="true">S</span><b>Shivam Pal</b><small>Google review</small></figcaption></div></figure>
         <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Astha hospital the best dailysis center<br>Very very good dialysis center sultanpur</blockquote><figcaption><span class="av" aria-hidden="true">A</span><b>Arif Ranipur</b><small>Google review</small></figcaption></div></figure>
-        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>it is best hospital in Sultanpur because it saves my life.when all the nearby hospitals has loses the hope.</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Rajveer Singh</b><small>Google review</small></figcaption></div></figure>
+        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>it is best hospital in Sultanpur because it saves my life.when all the nearby hospitals has loses the hope.</blockquote><figcaption><img class="av" src="img/av-rajveer.jpg" alt="" loading="lazy"><b>Rajveer Singh</b><small>Google review</small></figcaption></div></figure>
         <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Best hospital in Sultanpur for heart pateint</blockquote><figcaption><span class="av" aria-hidden="true">P</span><b>Pravin Srivastav</b><small>Google review</small></figcaption></div></figure>
-        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Aastha hospital is very nice</blockquote><figcaption><span class="av" aria-hidden="true">M</span><b>Manoj Kumar</b><small>Google review</small></figcaption></div></figure>
-        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div><blockquote>I am satisfied with the hospital and management</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Rakesh Munshi</b><small>Google review</small></figcaption></div></figure>
+        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Aastha hospital is very nice</blockquote><figcaption><img class="av" src="img/av-manoj.jpg" alt="" loading="lazy"><b>Manoj Kumar</b><small>Google review</small></figcaption></div></figure>
+        <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div><blockquote>I am satisfied with the hospital and management</blockquote><figcaption><img class="av" src="img/av-rakesh.jpg" alt="" loading="lazy"><b>Rakesh Munshi</b><small>Google review</small></figcaption></div></figure>
         </div>
         <div class="dctrl">
           <div class="ddots" id="rdots" role="tablist" aria-label="Choose reviews page"></div>
