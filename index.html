@@ -42,13 +42,8 @@ section { padding: 84px 0; position: relative; }
 
 /* header */
 header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; flex-wrap: wrap; }
+ .bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 10px 0; }
 .brand img { height: 56px; width: auto; }
-nav { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: .95rem; font-weight: 500; }
-nav a { text-decoration: none; color: var(--muted); }
-nav a:hover { color: var(--heart); }
-nav a.call { color: #fff; background: var(--heart); padding: 8px 18px; border-radius: 99px; font-weight: 600; }
-nav a.call:hover { background: #a21925; color: #fff; }
 
 .btn { display: inline-block; padding: 13px 26px; border-radius: 99px; font-weight: 600; text-decoration: none; border: 2px solid var(--heart); transition: transform .2s, background .2s; }
 .btn:hover { transform: translateY(-2px); }
@@ -60,6 +55,36 @@ nav a.call:hover { background: #a21925; color: #fff; }
 .btn.ghost:hover { background: rgba(255,255,255,.14); }
 .btn.sm { padding: 8px 18px; font-size: .95rem; }
 .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+
+
+.topbar { background: var(--blue); color: #fff; font-size: .92rem; }
+.topbar-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; }
+.tb-left { opacity: .9; }
+.tb-links { display: flex; align-items: center; gap: 26px; }
+.tb-links a { white-space: nowrap; color: #fff; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+.tb-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.tb-wa svg { width: 24px; height: 24px; color: #25d366; background: #fff; border-radius: 50%; padding: 0; }
+.main-nav { display: flex; gap: 28px; align-items: center; font-size: 1rem; font-weight: 500; margin-left: auto; }
+.main-nav a { text-decoration: none; color: var(--ink); padding: 8px 0; border-bottom: 2px solid transparent; }
+.main-nav a:hover { color: var(--heart); border-bottom-color: var(--heart); }
+.btn.book { padding: 11px 22px; border-radius: 8px; white-space: nowrap; }
+.wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff !important; font-weight: 600; padding: 8px 16px; border-radius: 99px; text-decoration: none !important; margin-top: 10px; }
+.wa-btn svg { width: 22px; height: 22px; color: #128c4a; background: #fff; border-radius: 50%; }
+.wa-btn:hover { background: #1ebd5a; }
+.wafloat { position: fixed; right: 18px; bottom: 78px; z-index: 30; background: #25d366; color: #fff; text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 99px; box-shadow: 0 10px 28px rgba(37,211,102,.45); display: flex; gap: 10px; align-items: center; }
+.wafloat svg { width: 26px; height: 26px; color: #128c4a; background: #fff; border-radius: 50%; }
+.wafloat:hover { background: #1ebd5a; }
+@media (max-width: 900px) {
+  .tb-left, .tb-links .tb-opt { display: none; }
+  .topbar-row { justify-content: center; }
+  .tb-links { gap: 18px; }
+  .bar { flex-wrap: wrap; gap: 8px 12px; }
+  .brand img { height: 48px; }
+  .btn.book .long { display: none; }
+  .btn.book { margin-left: auto; padding: 9px 16px; font-size: .92rem; }
+  .main-nav { order: 3; width: 100%; margin-left: 0; gap: 22px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; font-size: .95rem; }
+}
+@media (max-width: 480px) { .wafloat span { display: none; } .wafloat { padding: 12px; } }
 
 /* hero slideshow: building photo behind, doctor cut-out in front */
 .hero { position: relative; background: #0b1a3a; color: #fff; overflow: hidden; }
@@ -277,6 +302,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <defs>
+<symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.600 7.400c-.4 0-.8.200-1 .600-.5.900-.2 2.100.6 3.300 1 1.600 2.300 2.800 3.900 3.600 1.100.5 2.100.5 2.800-.2.300-.3.400-.8.100-1.100l-1.200-.9c-.2-.2-.5-.2-.7 0l-.5.500c-.8-.3-1.900-1.300-2.300-2.200l.5-.5c.2-.2.200-.5 0-.7L9.300 7.700c-.2-.2-.4-.3-.7-.3z"/></symbol>
 <symbol id="i-heart" viewBox="0 0 48 48"><path d="M24 41C10 31 6 23 6 17a8.500 8.500 0 0 1 15-5.500c1.200 1.300 2 2.200 3 3.300 1-1.100 1.800-2 3-3.300A8.500 8.500 0 0 1 42 17c0 6-4 14-18 24z"/><path style="stroke:var(--heart)" d="M12 25h7l3-6 4 11 3-5h7"/></symbol>
 <symbol id="i-bone" viewBox="0 0 48 48"><g transform="rotate(-45 24 24)"><rect x="12" y="20" width="24" height="8" rx="2"/><circle cx="11" cy="19" r="4.500"/><circle cx="11" cy="29" r="4.500"/><circle cx="37" cy="19" r="4.500"/><circle cx="37" cy="29" r="4.500"/></g></symbol>
 <symbol id="i-fracture" viewBox="0 0 48 48"><g transform="rotate(-45 24 24)"><rect x="12" y="20" width="24" height="8" rx="2"/><circle cx="11" cy="19" r="4.500"/><circle cx="11" cy="29" r="4.500"/><circle cx="37" cy="19" r="4.500"/><circle cx="37" cy="29" r="4.500"/></g><path style="stroke:var(--heart)" d="M22 16l3 5-4 3 3 5"/></symbol>
@@ -293,17 +319,30 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </defs>
 </svg>
 
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <span class="tb-left">NABH accredited &middot; Caring since 2001</span>
+    <nav class="tb-links" aria-label="Quick links">
+      <a class="tb-opt" href="#doctors">Find a Doctor</a>
+      <a class="tb-opt" href="#reviews">Reviews</a>
+      <a class="tb-opt" href="#contact">Contact Us</a>
+      <a class="tb-wa" href="https://wa.me/919415046034?text=Hello%20Astha%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp Us</a>
+      <a class="tb-tel" href="tel:+919415046034">+91 94150 46034</a>
+    </nav>
+  </div>
+</div>
 <header>
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="Astha Hospital &amp; Heart Center, home"><img src="img/logo.webp" alt="Astha Hospital &amp; Heart Center, caring since 2001" width="314" height="92"></a>
-    <nav aria-label="Main">
+    <nav class="main-nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#doctors">Doctors</a>
       <a href="#departments">Departments</a>
       <a href="#facilities">Facilities</a>
+      <a href="#insurance">Insurance</a>
       <a href="#contact">Contact</a>
-      <a class="call" href="tel:+919415046034">Call 94150 46034</a>
     </nav>
+    <a class="btn solid book" href="#contact">Book<span class="long"> an Appointment</span></a>
   </div>
 </header>
 
@@ -554,7 +593,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <p class="lede">Call to book a consultation, or find us on the map.</p>
       <div class="contact">
         <div><b>Address</b>Allahabad&ndash;Faizabad Road (near Panchopeeran), Vallipur, Sultanpur, Uttar Pradesh 228001</div>
-        <div><b>Appointments</b><a href="tel:+919415046034">94150 46034</a></div>
+        <div><b>Appointments</b><a href="tel:+919415046034">94150 46034</a><br><a class="wa-btn" href="https://wa.me/919415046034?text=Hello%20Astha%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment."><svg aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a></div>
         <div><b>Emergency</b><a href="tel:+915362240017">05362-240017</a></div>
         <div class="wide"><b>Map</b><a class="btn solid sm" href="https://maps.app.goo.gl/8KdZwehxKVHhp4iZ9">Open in Google Maps</a></div>
       </div>
@@ -568,6 +607,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <span>Allahabad&ndash;Faizabad Road, Vallipur, Sultanpur, UP 228001</span>
   </div>
 </footer>
+
+<a class="wafloat" href="https://wa.me/919415046034?text=Hello%20Astha%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment." aria-label="Chat with Astha Hospital on WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
 
 <a class="sos" href="tel:+915362240017" aria-label="Call emergency, 05362-240017"><i></i><span>Emergency</span></a>
 
