@@ -267,6 +267,18 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 
 /* reviews + contact */
 .rev-sec { background: var(--blush); }
+.rev-sec { padding-bottom: 72px; }
+.rgrid { columns: 3; column-gap: 20px; margin-top: 40px; }
+.rcard { break-inside: avoid; margin: 0 0 20px; background: #fff; border-radius: 18px; padding: 24px; box-shadow: 0 6px 22px rgba(15,33,66,.08); }
+.rcard .stars { color: var(--sun); font-size: 1.2rem; letter-spacing: 2px; }
+.rcard blockquote { margin: 12px 0 18px; font-size: 1.08rem; line-height: 1.55; color: var(--ink); }
+.rcard figcaption { display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; align-items: center; }
+.rcard .av { grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-weight: 700; }
+.rcard figcaption b { font-weight: 600; color: var(--ink); }
+.rcard figcaption small { color: var(--muted); }
+@media (max-width: 900px) { .rgrid { columns: 2; } }
+@media (max-width: 600px) { .rgrid { columns: 1; } }
+
 .revlinks { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .contact div { background: var(--card); border-radius: 18px; padding: 22px 24px; box-shadow: 0 6px 22px rgba(15,33,66,.07); line-height: 1.5; }
@@ -623,6 +635,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="revlinks">
         <a class="btn solid" href="https://maps.app.goo.gl/8KdZwehxKVHhp4iZ9">Read reviews on Google</a>
         <a class="btn line" href="https://www.justdial.com/Sultanpur/Astha-Hospital-Near-Panchopeeran-Civil-Line/9999P5362-5362-110110124751-Z5W6_BZDET">Read reviews on Justdial</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="rgrid">
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Nephro &amp; Cardiac oriented Best hospital in sultanpur</blockquote><figcaption><span class="av" aria-hidden="true">A</span><b>Ankit Yadav</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Best hospital in my city<br>All staff support</blockquote><figcaption><span class="av" aria-hidden="true">S</span><b>Sudeep Sharma</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Dr. Kc tripathi sir thanks to you for save my life</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Ramchandra Ray</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Astha hospital the best dailysis center<br>Very very good dialysis center sultanpur</blockquote><figcaption><span class="av" aria-hidden="true">A</span><b>Arif Ranipur</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>it is best hospital in Sultanpur because it saves my life.when all the nearby hospitals has loses the hope.</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Rajveer Singh</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Very best hart hospital</blockquote><figcaption><span class="av" aria-hidden="true">S</span><b>Shivam Pal</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Best hospital in Sultanpur for heart pateint</blockquote><figcaption><span class="av" aria-hidden="true">P</span><b>Pravin Srivastav</b><small>Google review</small></figcaption></figure>
+        <figure class="rcard"><div class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div><blockquote>I am satisfied with the hospital and management</blockquote><figcaption><span class="av" aria-hidden="true">R</span><b>Rakesh Munshi</b><small>Google review</small></figcaption></figure>
       </div>
     </div>
   </section>
