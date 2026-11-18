@@ -115,11 +115,10 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* first slide: group photo on top, text as a lower third */
-.slide.group { background:
-  linear-gradient(180deg, rgba(11,26,58,0) 0%, rgba(11,26,58,0) 40%, rgba(11,26,58,.86) 66%, rgba(11,26,58,.97) 100%),
-  url("img/hospital-group.jpg") center top / cover no-repeat, #0b1a3a; }
+.slide.group { background: #0b1a3a; opacity: 1; visibility: visible; transition: none; overflow: hidden; }
+.slide.group::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(11,26,58,0) 0%, rgba(11,26,58,0) 40%, rgba(11,26,58,.86) 66%, rgba(11,26,58,.97) 100%); }
 .hero:has(.slide.group.active) .pulse { display: none; }
-.gphoto-alt { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.gphoto-alt { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 0; }
 .slide.group .copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12px 48px; align-items: end; justify-content: unset; padding-block: 56px 64px; }
 .slide.group .copy > *, .slide.group .gl > *, .slide.group .gr > * { max-width: none; }
 .slide.group h1 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
@@ -347,9 +346,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .slide .copy { justify-content: flex-start; padding-block: 36px 0; }
   .slide.flip .copy { align-items: flex-start; }
   .doctor, .slide.flip .doctor { left: 50%; right: auto; transform: translateX(-50%); height: 50%; max-width: 86%; }
-  .slide.group { background:
-    linear-gradient(180deg, rgba(11,26,58,0) 0%, rgba(11,26,58,0) 18%, #0b1a3a 30%),
-    url("img/hospital-group.jpg") center top / 100% auto no-repeat, #0b1a3a; }
+  .slide.group::before { background: linear-gradient(180deg, rgba(11,26,58,0) 0%, rgba(11,26,58,0) 18%, #0b1a3a 30%); }
+  .gphoto-alt { height: auto; inset: 0 0 auto 0; object-fit: initial; }
   .slide.group .copy { grid-template-columns: 1fr; justify-content: flex-start; padding-block: 212px 56px; gap: 8px; }
   .slide.group .gr p.lead { margin-top: 12px; }
   .slide.group .copy { align-content: start; }
@@ -430,7 +428,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
             </div>
           </div>
         </div>
-        <img class="gphoto-alt" src="img/hospital-group.jpg" alt="Six doctors of Astha Hospital standing together with arms crossed in a hospital corridor" width="1600" height="893">
+        <img class="gphoto-alt" src="img/hospital-group.jpg" alt="Six doctors of Astha Hospital standing together with arms crossed in a hospital corridor" width="1600" height="893" fetchpriority="high">
       </div>
     </div>
   </div>
