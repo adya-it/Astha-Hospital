@@ -95,12 +95,22 @@ nav a.call:hover { background: #a21925; color: #fff; }
   url("img/hospital-group.jpg") center top / cover no-repeat, #0b1a3a; }
 .hero:has(.slide.group.active) .pulse { display: none; }
 .gphoto-alt { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-.slide.group .copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12px 48px; align-items: end; justify-content: unset; padding-block: 56px 84px; }
+.slide.group .copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12px 48px; align-items: end; justify-content: unset; padding-block: 56px 64px; }
 .slide.group .copy > *, .slide.group .gl > *, .slide.group .gr > * { max-width: none; }
 .slide.group h1 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
 .slide.group .gl { align-self: end; }
 .slide.group .gr p.lead { margin-top: 0; font-size: 1.05rem; }
 .slide.group .cta { margin-top: 18px; }
+
+.memory { max-width: 860px; margin-inline: auto; text-align: center; padding: 64px 32px; }
+.memory .fphoto { width: min(420px, 100%); margin: 36px auto 0; aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px; overflow: hidden; box-shadow: 0 0 0 5px rgba(242,184,75,.6), 0 22px 44px rgba(0,0,0,.4); position: relative; z-index: 1; }
+.memory .fphoto img { width: 100%; height: 100%; object-fit: cover; }
+.memory .fnames { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 36px auto 0; max-width: 700px; text-align: center; }
+.memory .fnames div { border-top: 1px solid rgba(255,255,255,.22); padding-top: 14px; }
+.memory .fnames b { font-size: 1.5rem; line-height: 1.25; margin-bottom: 4px; }
+.memory .memo { margin: 28px auto 0; max-width: 52ch; }
+.ins.narrow { max-width: 760px; margin-inline: auto; }
+@media (max-width: 640px) { .memory { padding: 48px 20px; } .memory .fnames { grid-template-columns: 1fr; gap: 20px; } }
 .controls { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 5; margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .dots { display: flex; gap: 10px; flex-wrap: wrap; }
 .dots button { border: 0; background: rgba(255,255,255,.35); height: 6px; width: 34px; border-radius: 3px; cursor: pointer; padding: 0; transition: background .3s, width .3s; }
@@ -243,7 +253,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .fac, .gallery { grid-template-columns: 1fr 1fr; }
   .trust-row { flex-direction: column; gap: 6px; }
   nav { gap: 14px; }
-  .slides, .slide.active, .slide .copy { min-height: 800px; }
+  .slides, .slide.active, .slide .copy { min-height: 740px; }
   .slide, .slide:first-child, .slide.flip { background:
     linear-gradient(180deg, rgba(11,26,58,.95) 0%, rgba(11,26,58,.8) 50%, rgba(11,26,58,.35) 100%),
     url("img/hospital-bg.jpg") center / cover no-repeat; }
@@ -253,7 +263,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .slide.group { background:
     linear-gradient(180deg, rgba(11,26,58,0) 0%, rgba(11,26,58,0) 18%, #0b1a3a 30%),
     url("img/hospital-group.jpg") center top / 100% auto no-repeat, #0b1a3a; }
-  .slide.group .copy { grid-template-columns: 1fr; justify-content: flex-start; padding-block: 212px 90px; gap: 8px; }
+  .slide.group .copy { grid-template-columns: 1fr; justify-content: flex-start; padding-block: 212px 56px; gap: 8px; }
   .slide.group .gr p.lead { margin-top: 12px; }
   .slide.group .copy { align-content: start; }
 
@@ -298,10 +308,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </header>
 
 <main id="top">
-  <div class="hero" id="hero" role="region" aria-roledescription="carousel" aria-label="Astha Hospital highlights">
-    <svg class="pulse" viewBox="0 0 1400 80" preserveAspectRatio="none" height="80" width="100%" aria-hidden="true"><path d="M0 40 H220 L250 40 L270 12 L300 70 L322 40 H560 L590 40 L610 8 L642 72 L664 40 H940 L970 40 L990 12 L1020 70 L1042 40 H1400"/></svg>
+  <div class="hero" id="hero">
     <div class="slides">
-      <div class="slide active group" data-label="Our doctors">
+      <div class="slide active group">
         <div class="copy wrap">
           <div class="gl">
             <span class="eyebrow">Caring since 2001</span>
@@ -316,33 +325,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           </div>
         </div>
         <img class="gphoto-alt" src="img/hospital-group.jpg" alt="Six doctors of Astha Hospital standing together with arms crossed in a hospital corridor" width="1600" height="893">
-      </div>
-      <div class="slide flip" data-label="Dr. Astha Manjula Tripathi" aria-hidden="true">
-        <div class="copy wrap">
-          <span class="eyebrow">Obstetrics &amp; Gynaecology</span>
-          <h2 class="dn">Dr. Astha Manjula Tripathi</h2>
-          <p class="deg">MBBS, MS (Obs &amp; Gynae), FMAS</p>
-          <ul class="chips"><li>Infertility specialist</li><li>High-risk pregnancy specialist</li><li>Laparoscopy surgeon</li></ul>
-          <div class="cta"><a class="btn solid" href="#doctors">View profile</a></div>
-        </div>
-        <img class="doctor" src="img/astha-bust.webp" alt="Dr. Astha Manjula Tripathi, wearing a green kurta and a stethoscope, arms crossed" width="506" height="820">
-      </div>
-      <div class="slide" data-label="Dr. Upendra Tiwari" aria-hidden="true">
-        <div class="copy wrap">
-          <span class="eyebrow">Orthopaedics &amp; Trauma</span>
-          <h2 class="dn">Dr. Upendra Tiwari</h2>
-          <p class="deg">MBBS, MS (Ortho)</p>
-          <ul class="chips"><li>AO certified trauma surgeon</li><li>Ex-resident, AIIMS New Delhi</li></ul>
-          <div class="cta"><a class="btn solid" href="#doctors">View profile</a></div>
-        </div>
-        <img class="doctor" src="img/upendra-cut.webp" alt="Dr. Upendra Tiwari, wearing a white coat and a stethoscope, arms crossed" width="685" height="1280">
-      </div>
-    </div>
-    <div class="controls wrap">
-      <div class="dots" role="tablist" aria-label="Choose slide"></div>
-      <div class="arrows">
-        <button type="button" id="prev" aria-label="Previous slide">&#8592;</button>
-        <button type="button" id="next" aria-label="Next slide">&#8594;</button>
       </div>
     </div>
   </div>
@@ -523,21 +505,24 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </section>
 
-  <section>
-    <div class="wrap two">
+  <section class="memory-sec">
+    <div class="wrap">
       <div class="memory">
         <span class="eyebrow">In memory</span>
         <h2>Remembering our founders.</h2>
-        <div class="founders">
-          <div class="fphoto"><img src="img/founders.jpg" alt="Late Dr. K.C. Tripathi and Late Dr. Manjula Tripathi, founders of Astha Hospital, smiling together with a bouquet" width="760" height="950"></div>
-          <div class="fnames">
-            <div><b>Late Dr. K.C. Tripathi</b><span>Founder of Astha Hospital</span></div>
-            <div><b>Late Dr. Manjula Tripathi</b><span>Founder of Astha Hospital, Gynaecology</span></div>
-          </div>
+        <div class="fphoto"><img src="img/founders.jpg" alt="Late Dr. K.C. Tripathi and Late Dr. Manjula Tripathi, founders of Astha Hospital, smiling together with a bouquet" width="760" height="950"></div>
+        <div class="fnames">
+          <div><b>Late Dr. K.C. Tripathi</b><span>Founder of Astha Hospital</span></div>
+          <div><b>Late Dr. Manjula Tripathi</b><span>Founder of Astha Hospital, Gynaecology</span></div>
         </div>
         <p class="memo">Their care for the people of Sultanpur lives on in the work of our doctors and staff today.</p>
       </div>
-      <div id="insurance" class="ins">
+    </div>
+  </section>
+
+  <section id="insurance" class="rule">
+    <div class="wrap">
+      <div class="ins narrow">
         <span class="eyebrow">Insurance</span>
         <h2>We work with your insurance.</h2>
         <ul>
@@ -586,38 +571,5 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
 <a class="sos" href="tel:+915362240017" aria-label="Call emergency, 05362-240017"><i></i><span>Emergency</span></a>
 
-<script>
-(function () {
-  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-  var dotsBox = document.querySelector('.dots');
-  var hero = document.getElementById('hero');
-  var i = 0, timer = null;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var dots = slides.map(function (sl, n) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.setAttribute('role', 'tab');
-    b.setAttribute('aria-label', 'Show ' + sl.getAttribute('data-label'));
-    b.addEventListener('click', function () { go(n); restart(); });
-    dotsBox.appendChild(b); return b;
-  });
-  function go(n) {
-    i = (n + slides.length) % slides.length;
-    slides.forEach(function (sl, k) {
-      sl.classList.toggle('active', k === i);
-      sl.setAttribute('aria-hidden', k === i ? 'false' : 'true');
-      dots[k].setAttribute('aria-selected', k === i ? 'true' : 'false');
-    });
-  }
-  function start() { if (!reduce) timer = setInterval(function () { go(i + 1); }, 6500); }
-  function stop() { clearInterval(timer); timer = null; }
-  function restart() { stop(); start(); }
-  document.getElementById('prev').addEventListener('click', function () { go(i - 1); restart(); });
-  document.getElementById('next').addEventListener('click', function () { go(i + 1); restart(); });
-  hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start);
-  hero.addEventListener('focusin', stop); hero.addEventListener('focusout', start);
-  hero.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') go(i - 1); if (e.key === 'ArrowRight') go(i + 1); });
-  go(0); start();
-})();
-</script>
 </body>
 </html>
