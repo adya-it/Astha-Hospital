@@ -85,9 +85,9 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 .main-nav a { text-decoration: none; color: var(--ink); padding: 8px 0; border-bottom: 2px solid transparent; }
 .main-nav a:hover { color: var(--heart); border-bottom-color: var(--heart); }
 .btn.book { padding: 11px 22px; border-radius: 8px; white-space: nowrap; }
-.wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff !important; font-weight: 600; padding: 8px 16px; border-radius: 99px; text-decoration: none !important; margin-top: 10px; }
+.wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #0a7a3d; color: #fff !important; font-weight: 600; padding: 8px 16px; border-radius: 99px; text-decoration: none !important; margin-top: 10px; }
 .wa-btn svg { width: 22px; height: 22px; color: #128c4a; background: #fff; border-radius: 50%; }
-.wa-btn:hover { background: #1ebd5a; }
+.wa-btn:hover { background: #086a35; }
 .wafloat { position: fixed; right: 18px; bottom: 78px; z-index: 30; background: #25d366; color: #fff; text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 99px; box-shadow: 0 10px 28px rgba(37,211,102,.45); display: flex; gap: 10px; align-items: center; }
 .wafloat svg { width: 26px; height: 26px; color: #128c4a; background: #fff; border-radius: 50%; }
 .wafloat:hover { background: #1ebd5a; }
@@ -322,6 +322,17 @@ header { background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-b
 .mapcard iframe { width: 100%; height: 420px; border: 0; display: block; }
 .mapbtn { margin-top: 20px; }
 @media (max-width: 640px) { .mapcard iframe { height: 320px; } }
+.bookform { padding: 72px 0 24px; }
+.aform { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; background: #fff; border-radius: 20px; padding: 28px; box-shadow: 0 10px 30px rgba(15,33,66,.1); }
+.aform label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: .95rem; color: var(--ink); }
+.aform .full, .aform .aerr, .aform button { grid-column: 1 / -1; }
+.aform input, .aform select, .aform textarea { width: 100%; min-width: 0; font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--ink); min-height: 48px; }
+.aform input:focus, .aform select:focus, .aform textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+.aform .aerr { color: var(--heart); font-weight: 600; margin: 0; }
+.aform button { justify-self: start; cursor: pointer; font: inherit; font-weight: 600; }
+.rcount { display: none; color: var(--muted); font-weight: 600; }
+@media (max-width: 900px) { #rdots { display: none; } .rcount { display: block; } }
+@media (max-width: 640px) { .aform { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
 .revlinks { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .contact div { background: var(--card); border-radius: 18px; padding: 22px 24px; box-shadow: 0 6px 22px rgba(15,33,66,.07); line-height: 1.5; }
@@ -442,7 +453,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <a href="blog/index.html">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn solid book" href="#contact">Book<span class="long"> an Appointment</span></a>
+    <a class="btn solid book" href="#book">Book<span class="long"> an Appointment</span></a>
   </div>
 </header>
 
@@ -458,7 +469,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <div class="gr">
             <p class="lead">Emergency care 24x7, angiography and angioplasty, ICU with ventilator, dialysis, trauma surgery and maternity care, all under one roof.</p>
             <div class="cta">
-              <a class="btn solid" href="#contact">Book an appointment</a>
+              <a class="btn solid" href="#book">Book an appointment</a>
               <a class="btn ghost" href="https://maps.app.goo.gl/8KdZwehxKVHhp4iZ9">Get directions</a>
             </div>
           </div>
@@ -696,10 +707,35 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <figure class="rcard"><div class="rin"><div class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div><blockquote>I am satisfied with the hospital and management</blockquote><figcaption><img class="av" src="img/av-rakesh.jpg" alt="" loading="lazy"><b>Rakesh Munshi</b><small>Google review</small></figcaption></div></figure>
         </div>
         <div class="dctrl">
-          <div class="ddots" id="rdots" role="tablist" aria-label="Choose reviews page"></div>
+          <div class="ddots" id="rdots" role="tablist" aria-label="Choose reviews page"></div><span class="rcount" id="rcount" aria-live="polite"></span>
           <div class="darrows"><button type="button" id="rpause" class="pausebtn" aria-label="Pause automatic scrolling" aria-pressed="false">&#10074;&#10074;</button><button type="button" id="rprev" aria-label="Previous reviews">&#8592;</button><button type="button" id="rnext" aria-label="Next reviews">&#8594;</button></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="book" class="bookform">
+    <div class="wrap">
+      <span class="eyebrow">Appointments</span>
+      <h2>Request an appointment</h2>
+      <p class="lede">Fill in the details and send them to us on WhatsApp. Our team will reply to confirm a time. For an emergency, call 05362-240017 right away.</p>
+      <form id="apptform" class="aform" novalidate>
+        <label>Your name<input id="af-name" name="name" type="text" autocomplete="name" required></label>
+        <label>Mobile number<input id="af-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        <label>Doctor<select id="af-doc" name="doctor">
+          <option value="">Not sure, please advise</option>
+          <option>Dr. Astha Manjula Tripathi (Obstetrics &amp; Gynaecology)</option>
+          <option>Dr. Upendra Tiwari (Orthopaedics &amp; Trauma)</option>
+          <option>Dr. Chandan Singh (Cardiology)</option>
+          <option>Dr. Peeyush Mishra (Nephrology)</option>
+          <option>Dr. Ankit Singh (Urology)</option>
+          <option>Dr. Dheeraj Singh (Nephrology)</option>
+        </select></label>
+        <label>Preferred date<input id="af-date" name="date" type="date"></label>
+        <label class="full">Reason or symptoms (optional)<textarea id="af-note" name="note" rows="3"></textarea></label>
+        <p class="aerr" id="af-err" role="alert" hidden>Please enter your name and a valid mobile number.</p>
+        <button class="btn solid" type="submit">Send on WhatsApp</button>
+      </form>
     </div>
   </section>
 
@@ -783,7 +819,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   function pages() { return Math.ceil(cards / per()); }
   function step() { return track.children[0].getBoundingClientRect().width * per() + 20 * per(); }
   function current() { return Math.max(0, Math.min(pages() - 1, Math.round(track.scrollLeft / step()))); }
-  function mark() { var c = current(); dots.forEach(function (d, k) { d.setAttribute('aria-selected', k === c ? 'true' : 'false'); }); }
+  function mark() { var c = current(); dots.forEach(function (d, k) { d.setAttribute('aria-selected', k === c ? 'true' : 'false'); }); var rc = document.getElementById('rcount'); if (rc) rc.textContent = 'Review ' + (c * per() + 1) + ' of ' + cards; }
   function goTo(n) { track.scrollTo({ left: n * step(), behavior: reduce ? 'auto' : 'smooth' }); }
   function next() { goTo(current() + 1 >= pages() ? 0 : current() + 1); }
   function prev() { goTo(current() - 1 < 0 ? pages() - 1 : current() - 1); }
@@ -814,6 +850,21 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   });
   window.addEventListener('resize', build);
   build(); start();
+})();
+</script>
+<script>
+(function () {
+  var f = document.getElementById('apptform'); if (!f) return;
+  var d = document.getElementById('af-date'); var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset()); d.min = t.toISOString().slice(0, 10);
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('af-name').value.trim(), phone = document.getElementById('af-phone').value.replace(/[^0-9+]/g, ''), err = document.getElementById('af-err');
+    if (name.length < 2 || phone.replace(/\D/g, '').length < 10) { err.hidden = false; return; }
+    err.hidden = true;
+    var doc = document.getElementById('af-doc').value, date = document.getElementById('af-date').value, note = document.getElementById('af-note').value.trim();
+    var msg = 'Hello Astha Hospital, I would like to book an appointment.\nName: ' + name + '\nMobile: ' + phone + (doc ? '\nDoctor: ' + doc : '') + (date ? '\nPreferred date: ' + date : '') + (note ? '\nReason: ' + note : '');
+    window.open('https://wa.me/919415046034?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
 })();
 </script>
 </body>
